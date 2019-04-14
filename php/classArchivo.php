@@ -4,6 +4,7 @@
 	{
 		static function check($file, $img, $titulo, $inf)
 		{
+			$file = "articulos.php";
 			$canal = fopen($file, "r");
 			while(!feof($canal))
 			{

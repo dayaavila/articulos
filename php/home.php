@@ -1,4 +1,10 @@
-<?php require_once "template.php"; ?>
+<?php 
+
+	require_once "template.php"; 
+	require_once "classArchivo.php";
+	require_once "classArticulos.php";
+
+?>
 
 <?php
 
@@ -8,48 +14,43 @@
 // {
 //    echo $value . "\n";
 // }
-
-// $objeto = new Articulos($img, $titulo, $inf);
+// $objeto = new Articulos($img[0], $titulo[1], $inf[2]);
 
 ?>
 
 
 <?php 
-$myfile = fopen("articulos.txt", "r") or die("Unable to open file!");
-while(!feof($myfile)) {
-  echo fgets($myfile) . "<br>";
-}
-fclose($myfile);
+// $myfile = fopen("articulos.txt", "r") or die("Unable to open file!");
+// while(!feof($myfile)) {
+//   echo fgets($myfile) . "<br>";
+// }
+// fclose($myfile);
 ?>
 
 <?php 
-			// require_once "template.php";
 
-			// $canal = fopen("contactos.txt", "r");
+	$canal = fopen("articulos.txt", "r");
+	$articulos = [];
 
-			// echo "<form action=borrar.php method=post>";
-			// echo "<table>";
-			// echo "<tr><th>Empresa</th><th>Direccion</th><th>Nombre</th><th>DNI</th><th>Telefono</th><th>Mail</th><th>Sector</th></tr>";
-			// $contador = 0;
-			// while(!feof($canal))
-			// {
-			// 	$line = fgets($canal);
-			// 	$datos = explode(":", $line);
-
-			// 	if($_SESSION["user_data"][0]==$datos[0])
-			// 	{
-			// 		echo "<tr>";
-			// 			for($i=1; $i<count($datos); $i++)
-			// 			{
-			// 				echo "<td>$datos[$i]</td>";
-			// 			}
-			// 			echo "<td><input type=radio name=borrar value=$contador></td>";
-			// 		echo "</tr>";
-			// 	}
-			// 	$contador++;
-			// }
-			// echo "</table>";
-			// echo "<input type='submit' name=boton>";
-			// echo "</form>";
-		?>
-
+	while(!feof($canal))
+	{
+		$linia = fgets($canal);
+		array_push($articulos, $linia);
+	}
+	
+	foreach ($articulos as $value) 
+	{
+		$partes = explode("|", $value);
+		echo '<div class="art">';
+				echo '<img src="img/alter.jpg" alt="alter" height="50" width="50" class="img">';
+				echo '<img src="img/Ed-Sheeran.jpg" alt="alter" height="50" width="50" class="img">';
+				echo '<img src="img/john_mayer.jpg" alt="alter" height="50" width="50" class="img">';
+				echo '<img src="img/lady-gaga.jpg" alt="alter" height="50" width="50" class="img">';
+				echo '<img src="img/oasis.jpg" alt="alter" height="50" width="50" class="img">';
+				echo '<img src="img/passenger.jpg" alt="alter" height="50" width="50" class="img">';
+				echo '<img src="img/pink.jpg" alt="alter" height="50" width="50" class="img">';
+				echo '<img src="img/red_hot.jpg" alt="alter" height="50" width="50" class="img">';
+				echo '<div class="titulo">'.$partes[0].'</div>';
+		echo '</div>';
+	}
+?>
