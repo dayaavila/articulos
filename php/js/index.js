@@ -67,9 +67,7 @@ $(document).ready(function(){
 			$(email).css("border-bottom", "2px solid gray");
 		}
 
-
 		$("#errors").html(msg);
-		
 		if(flag)
 		{
 			document.getElementById("contact_form").submit();

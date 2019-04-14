@@ -35,15 +35,6 @@
 		<div id="errors"></div>
 	</form>
 
-	<?php 
-		//funciona pero no me muestra el registro
-		// session_start();
-		// if(!isset($_SESSION["user"]))
-		// {
-		// 	header("Location: controller.php");
-		// }
-	?>
-
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/index.js"></script>
 	

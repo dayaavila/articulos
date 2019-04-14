@@ -53,4 +53,5 @@
 				echo '<div class="titulo">'.$partes[0].'</div>';
 		echo '</div>';
 	}
+	header("location: home.php");
 ?>
